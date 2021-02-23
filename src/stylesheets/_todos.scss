@@ -1,0 +1,43 @@
+.todos {
+  &__form {
+    @media only screen and (max-width: 576px) {
+      flex-direction: column;
+    }
+
+    .input__wrapper {
+      display: flex;
+      @media only screen and (max-width: 576px) {
+        margin-bottom: 1rem;
+      }
+
+      input {
+        width: 100%;
+        padding: 10px;
+        border-radius: 5px;
+        border: 1px solid hsl(0, 0%, 80%);
+
+        &:focus, &:active {
+          border-color: $blue;
+          outline: none;
+          box-shadow: none;
+        }
+      }
+
+      button {
+        @include border-reset;
+        @include flex-center--horizontal;
+        padding: 0 1rem;
+        cursor: pointer;
+        font-size: 10px;
+        border-radius: 50%;
+        margin: 0 10px;
+        background-color: $baby-gray;
+        transition: background-color 0.25s ease;
+
+        &:hover {
+          background-color: darken($color: $baby-gray, $amount: 7%);
+        }
+      }
+    }
+  }
+}

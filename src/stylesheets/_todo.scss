@@ -1,0 +1,60 @@
+.todo {
+  @include flex-center--horizontal;
+  justify-content: space-between;
+  margin: 1rem 0;
+  padding: 1rem;
+  background-color: $baby-gray;
+  border-radius: 5px;
+
+  &__list {
+    margin-top: 2rem;
+    width: 25vw;
+
+    @media only screen and (max-width: 800px) {
+      width: 85vw;
+    }
+
+    li {
+      list-style-type: none;
+    }
+  }
+
+  &__item {
+    &--completed {
+      text-decoration: line-through;
+      color: rgb(180, 177, 177);
+    }
+  }
+
+  &--check {
+    color: $green;
+  }
+
+  &--undo {
+    color: $blue;
+  }
+
+  &--empty {
+    color: $red;
+  }
+
+  .cta {
+    display: flex;
+    align-items: center;
+
+    button {
+      @include border-reset;
+      @include flex-center--horizontal;
+      position: relative;
+      cursor: pointer;
+      padding: 8px;
+      background-color: transparent;
+      border-radius: 50%;
+      transition: background-color 0.3s ease-out;
+
+      &:hover {
+        background-color: darken($color: $baby-gray, $amount: 7%);
+      }
+    }
+  }
+}
